@@ -1,26 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/form';
 
 function App() {
     return ( <
         div className = "App" >
+        <
+        Form / >
 
         <
-        form >
-        <
-        label >
-        Name <
-        input type = "text"
-        name = "name"
-        placeholder = "Enter your name" / >
-        <
-        /label> <
-        input type = "submit"
-        value = "Submit" / >
-        <
-        /form>  < /
-        div >
-    );
+        /div>
+    )
 }
 
 export default App;
