@@ -1,11 +1,12 @@
 import './App.css';
-import Form from './components/form';
+import MainReg from './components/MainForm/MainReg';
+
 
 function App() {
     return ( <
-        div className = "App" >
+        div className = "" >
         <
-        Form / >
+        MainReg / >
 
         <
         /div>

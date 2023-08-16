@@ -1,0 +1,37 @@
+.mainHeading {
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    color: tomato;
+}
+
+.mainLabel {
+    font-size: 25px;
+    color: aqua;
+    font-family: cursive;
+    font-weight: 500;
+}
+
+.mainContainer {
+    width: 400px;
+    margin: 100px auto 0px auto;
+}
+
+.mainForm {
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.mainForm :hover {
+    color: tomato;
+}
+
+.FormBox {
+    margin: 40px;
+}
+
+body {
+    background-image: url(../../assets/venom.jpg);
+}
