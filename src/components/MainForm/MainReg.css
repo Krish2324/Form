@@ -18,7 +18,8 @@
 }
 
 .mainForm {
-    width: 100%;
+    width: 400px;
+    margin: 100px auto 0px auto;
     font-size: 18px;
     border: 3px solid white;
     border-radius: 10px;
