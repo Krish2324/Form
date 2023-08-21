@@ -32,21 +32,21 @@ const MainReg = () => {
     
     const NameValuesHandle = (e) => {
         e.preventDefault();
-      if (nameErr === true || name.length ==0) {
-        alert('Your Name is Invalid');
+      if (nameErr == true || name.length ==0) {
+        alert('Your Name is Invalid OR Empty');
         
       }
-      if (surnameErr === true || surname.length ==0) {
-        alert('Your Surname is Invalid');
+      if (surnameErr == true || surname.length ==0) {
+        alert('Your Surname is Invalid OR Empty');
         
-      }if (mailErr === true || mail.length ==0) {
-        alert('Your Email is Invalid');
+      }if (mailErr == true || mail.length ==0) {
+        alert('Your Email is Invalid OR Empty');
         
-      }if (phoneErr === true || phone.length ==0) {
-        alert('Your Phone is Invalid');
+      }if (phoneErr == true || phone.length ==0) {
+        alert('Your Phone is Invalid OR Empty');
         
-      }if (ageErr === true || age.length ==0) {
-        alert('Your Age is Invalid');
+      }if (ageErr == true || age.length ==0) {
+        alert('Your Age is Invalid OR Empty');
         
       }
 
@@ -63,7 +63,7 @@ const MainReg = () => {
         else{
             setSurnameErr(true)
         }
-        setSurname(surname)
+        setSurname(Snitem)
     }
     
     // const SnameValuesHandle = () => {
@@ -82,7 +82,7 @@ const MainReg = () => {
       if (Mailitem.length ==0) {
         setMailErr(false)
       }
-      setMail(mail)
+      setMail(Mailitem)
 
     }
 
@@ -103,7 +103,7 @@ const MainReg = () => {
             setPhoneErr(false)
           }
 
-        setPhone(phone)
+        setPhone(Phoneitem)
     }
     
     // const PhoneValuesHandle = () => {
@@ -141,9 +141,24 @@ const MainReg = () => {
         
 //     }
 //   }
+
+    const SubmitForm = () => {
+      if(nameErr === true || surnameErr === true || mailErr === true || phoneErr === true || ageErr === true || name.length === 0 || surname.length === 0 || mail.length === 0 || phone.length === 0 || age.length === 0){
+        document.getElementById('FailMessage').innerHTML = "Registration Unsuccessful";
+        document.getElementById('FailMessage').style.display = "block"
+        document.getElementById('PassMessage').style.display = "none"
+      }
+      else{
+        document.getElementById('PassMessage').innerHTML = "Regisration Successful";
+        document.getElementById('PassMessage').style.display = "block"
+        document.getElementById('FailMessage').style.display = "none"
+      }
+    } 
       return (
     <>
     <div className="">
+    <div id="PassMessage"></div>
+          <div id="FailMessage"></div>
         <div className="mainForm">
             <h2 className="mainHeading">Regestration Form</h2>
         <form className="FormBox" onSubmit={NameValuesHandle}>
@@ -155,15 +170,15 @@ const MainReg = () => {
 		<input className="mainInput" type="text" name="Surname" placeholder="Enter your Surname" onChange={SurnameNameHandle}/>{surnameErr?<span className="ErrorMessage">Invalid :- Must Have 5-10 letters</span>:""}<br />
 		
         <label className="mainLabel"> Email </label>
-		<input className="mainInput" type="email" name="email" placeholder="Enter your mail id" onChange={MailHandle}/>{mailErr?<span className="ErrorMessage">Invalid :- ID Must Contain @gmail.com</span>:""}<br />
+		<input className="mainInput" type="email" name="Email" placeholder="Enter your mail id" onChange={MailHandle}/>{mailErr?<span className="ErrorMessage">Invalid :- ID Must Contain @gmail.com</span>:""}<br />
 		
         <label className="mainLabel"> Phone </label>
 		<input className="mainInput" type="number" name="Phone" placeholder="Enter your Phone number" onChange={PhoneHandle}/>{phoneErr?<span className="ErrorMessage">Invalid :- Number Must start with 9,8,7,6</span>:""}<br />
         
         <label className="mainLabel"> Age </label>
-		<input className="mainInput" type="age" name="Age" placeholder=" Enter your Age" onChange={AgeHandle}/>{ageErr?<span className="ErrorMessage">Invalid: Minimum age must be 18 and Maximum age can be 70</span>:""}<br />
+		<input className="mainInput" type="number" name="Age" placeholder=" Enter your Age" onChange={AgeHandle}/>{ageErr?<span className="ErrorMessage">Invalid: Minimum age must be 18 and Maximum age can be 70</span>:""}<br />
 		
-            <button type="submit" className="mainBtn">Submit</button>
+            <button type="submit" onClick={SubmitForm} className="mainBtn">Submit</button>
         
         </form>
       </div>
